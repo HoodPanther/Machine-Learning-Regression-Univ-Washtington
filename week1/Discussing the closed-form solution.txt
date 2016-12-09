@@ -1,0 +1,25 @@
+
+Lecture : Discussing the closed-form solution
+https://www.coursera.org/learn/ml-regression/lecture/jOVX8/discussing-the-closed-form-solution
+
+In linear algebra, an n-by-n square matrix A is called invertible (also nonsingular or nondegenerate) if there exists an n-by-n square matrix B such that
+AAB = BA = In
+
+Where In = identity matrix  (ie: top left to bottom right diagonal values are all 1, all other values = 0)
+
+A matrix is full row rank when each of the rows of the matrix are linearly independent and full column rank when each of the columns of the matrix are linearly independent. For a square matrix these two concepts are equivalent and we say the matrix is full rank if all rows and columns are linearly independent. A square matrix is full rank if and only if its determinant is nonzero.
+
+https://www.cds.caltech.edu/~murray/amwiki/index.php/FAQ:_What_does_it_mean_for_a_non-square_matrix_to_be_full_rank%3F
+
+@ 3:56
+
+for a D x D square matrice, complexity of inverse = D^3
+
+
+Transpose of matrix = reflect the matrix over main diagonal (top left to bottom right).
+[A^T]ij = [A]ji
+
+https://en.wikipedia.org/wiki/Transpose
+
+
+

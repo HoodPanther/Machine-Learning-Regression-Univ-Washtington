@@ -1,0 +1,182 @@
+https://www.coursera.org/learn/ml-regression/exam/qlNDi/multiple-regression
+	Multiple Regression
+
+9 questions
+1
+point
+1. 
+Which of the following is NOT a linear regression model. Hint: remember that a linear regression model is always linear in the parameters, but may use non-linear features.
+
+y = w_0 + w_1 * x
+
+y = w_0 + w_1 * (x^2)
+
+y = w_0 + w_1 * log(x)
+
+y = w_0 * w_1 + log(w_1) * x 
+----------------------------------------------------------------------------------------------------
+refer http://blog.minitab.com/blog/adventures-in-statistics/what-is-the-difference-between-linear-and-nonlinear-equations-in-regression-analysis
+A model is linear when each term is either a constant or the product of a parameter and a predictor variable. A linear equation is constructed by adding the results for each term. This constrains the equation to just one basic form:
+Response = constant + parameter * predictor + ... + parameter * predictor
+
+In statistics, a regression equation (or function) is linear when it is linear in the parameters. 
+ you can include a squared variable to produce a U-shaped curve.
+
+
+
+y = w_0 + w_1 * x : LINEAR
+
+y = w_0 + w_1 * (x^2) : LINEAR
+
+y = w_0 + w_1 * log(x) : LINEAR
+
+y = w_0 * w_1 + log(w_1) * x : NONLINEAR  log of constant is not linear. (CORRECT)
+
+----------------------------------------------------------------------------------------------------
+
+1
+point
+----------------------------------------------------------------------------------------------------
+2. 
+Your estimated model for predicting house prices has a large positive weight on 'square feet living'. This implies that if we remove the feature 'square feet living' and refit the model, the new predictive performance will be worse than before.
+
+True
+
+False
+----------------------------------------------------------------------------------------------------
+TRUE. (WRONG)
+FALSE - cannot predict if the model will be more or less accurate when using other features.[CORRECT]
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+3. 
+Complete the following: Your estimated model for predicting house prices has a positive weight on 'square feet living'. You then add 'lot size' to the model and re-estimate the feature weights. The new weight on 'square feet living' [_________] be positive.
+
+will not
+
+will definitely
+
+might
+----------------------------------------------------------------------------------------------------
+will definitely (WRONG) - cannot predict future weights when features changed from the information provided.
+might - we can't predict future weights 'will not' be positive when features changed from the information provided.[CORRECT]
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+4. 
+If you double the value of a given feature (i.e. a specific column of the feature matrix), what happens to the least-squares estimated coefficients for every other feature? (assume you have no other feature that depends on the doubled feature i.e. no interaction terms).
+
+They double
+
+[WRONG] They halve
+
+They stay the same
+
+[WRONG] It is impossible to tell from the information provided
+----------------------------------------------------------------------------------------------------
+[WRONG] halve [needs justification by formula]
+[WRONG] 'It is impossible to tell from the information provided' - cannot predict what the other feature values will do from the information provided.
+[new attempt] They stay the same - because the co-efficent for the feture changed should change, not the co-efficient for the other features.
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+5. 
+Gradient descent/ascent is...
+
+A model for predicting a continuous variable
+
+[CORRECT] An algorithm for minimizing/maximizing a function
+
+A theoretical statistical result
+
+An approximation to simple linear regression
+
+A modeling technique in machine learning
+----------------------------------------------------------------------------------------------------
+An algorithm for minimizing/maximizing a function  (CORRECT)
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+6. 
+Gradient descent/ascent allows us to...
+
+Predict a value based on a fitted function
+
+Estimate model parameters from data
+
+Assess performance of a model on test data
+----------------------------------------------------------------------------------------------------
+Estimate model parameters from data  (CORRECT)
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+7. 
+Which of the following statements about step-size in gradient descent is/are TRUE (select all that apply)
+
+It's important to choose a very small step-size
+
+The step-size doesn't matter
+
+If the step-size is too large gradient descent may not converge
+
+If the step size is too small (but not zero) gradient descent may take a very long time to converge
+----------------------------------------------------------------------------------------------------
+FALSE : It's important to choose a very small step-size
+FALSE : The step-size doesn't matter
+TRUE : If the step-size is too large gradient descent may not converge
+TRUE : If the step size is too small (but not zero) gradient descent may take a very long time to converge
+All are CORRECT!!!
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+8. 
+Let's analyze how many computations are required to fit a multiple linear regression model using the closed-form solution based on a data set with 50 observations and 10 features. In the videos, we said that computing the inverse of the 10x10 matrix (H^T)H was on the order of D^3 operations. Let's focus on forming this matrix prior to inversion. How many multiplications are required to form the matrix (H^T)H?
+
+Please enter a number below.
+
+Enter answer here
+----------------------------------------------------------------------------------------------------
+D^3 - 10^3 = 1000  [WRONG]
+refer https://www.coursera.org/learn/ml-regression/lecture/82RKt/computing-the-cost-of-a-d-dimensional-curve
+refer lecture Computing the cost of a D-dimensional curve
+@ 5'29 number of operations = # of features x # of operations.
+answer = 500 [WRONG]
+
+https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
+H x H^T = (D x N) x (N x D) = D x D. Order of complexity = D x N x D.
+50x10x50 = 2500 [CORRECT]
+
+
+----------------------------------------------------------------------------------------------------
+1
+point
+----------------------------------------------------------------------------------------------------
+9.  More generally, if you have D features and N observations what is the total complexity of computing ((H^T)H)^(-1)?
+
+[WRONG] O(D^3)
+
+O(ND^3)
+
+[CORRECT]  O(ND^2 + D^3)
+
+O(ND^2)
+
+O(N^2D + D^3)
+
+O(N^2D)
+----------------------------------------------------------------------------------------------------
+D^3  WRONG!!!
+https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
+multiplying (nxm) matrice by (mxp) matrice produces a nxp matrice and is order mxnxp.
+H^T x H (H transform x H) where H has dimensions D x N. so H^T = N x D.
+H x H^T = (D x N) x (N x D) = D x D. Order of complexity = D x N x D.
+inverting a D x D matrice : results in D x D matrice, order of complexity = D^3.
+
+So total order of complexity = D^2 x N + D^3 : O(ND^2 + D^3) [CORRECT]
+----------------------------------------------------------------------------------------------------

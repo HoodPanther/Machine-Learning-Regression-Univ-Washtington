@@ -1,0 +1,32 @@
+WEEK 1 lecture notes
+
+Lecture : Finding the least squares line
+
+Lecture : Computing the gradient of RSS
+
+RSS = residual sum squares
+min sum squares
+
+https://www.coursera.org/learn/ml-regression/lecture/Ifx9C/approach-2-gradient-descent
+
+
+symmetric cost errors vs assymmetric cost errors
+
+ie: 
+cost of underestimating is same as cost of overestimating = symmetric cost errors
+cost of underestimating is different to  cost of overestimating = assymmetric cost errors
+
+
+
+
+
+
+
+
+
+To minimise residual sum of squares - we set gradient equal to zero
+closed form solution does not always exist
+gradient descent requires we choose stepsize and convergence criteria.
+when setting gradient to zero - done need to nominated these parameters.
+
+
