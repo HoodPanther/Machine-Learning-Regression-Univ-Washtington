@@ -47,6 +47,5 @@ Which of the two models (square feet or bedrooms) has lower RSS on TEST data?
 
 Model 2 (Bedrooms)
 ----------------------------------------------------------------------------------------------------
-did this by guesswork, need calculated method.
-
+see workbook for method used.
 ----------------------------------------------------------------------------------------------------
