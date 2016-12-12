@@ -1,14 +1,25 @@
 Fitting a simple linear regression model on housing data
 
 4 questions
-1
-point
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
 1. 
 Using your Slope and Intercept from predicting prices from square feet, what is the predicted price for a house with 2650 sqft? Use American-style decimals without comma separators (e.g. 300000.34), and round your answer to 2 decimal places. Do not include the dollar sign.
 
 Enter answer here
-1
-point
+----------------------------------------------------------------------------------------------------
+refer : video lecture 
+https://www.coursera.org/learn/ml-regression/lecture/G9oBu/approach-1-closed-form-solution
+reading
+https://www.coursera.org/learn/ml-regression/supplement/I0crX/optional-reading-worked-out-example-for-closed-form-solution
+
+as calculated using closed form solution from lecture to calculate the slope and intercept.
+700074.845
+Rounded to 2 decimal places : 700074.85  [CORRECT]
+as predicted using linear regression : 794302.323 [for reference only.]
+correct working in 'Week1_programming_assignment_B/ipynb'
+----------------------------------------------------------------------------------------------------
 2. 
 Using the learned slope and intercept from the squarefeet model, what is the RSS for the simple linear regression using squarefeet to predict prices on TRAINING data?
 
@@ -16,20 +27,26 @@ Between 5e+12 and 5.2e+12
 
 Between 1.1e+14 and 1.3e+14
 
-Between 1.1e+15 and 1.3e+15
+[CORRECT] Between 1.1e+15 and 1.3e+15
 
 Between 3.3e+15 and 3.5e+15
-1
-point
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
 3. 
 According to the inverse regression function and the regression slope and intercept from predicting prices from square-feet, what is the estimated square-feet for a house costing $800,000?
 
 Enter answer here
-1
-point
+----------------------------------------------------------------------------------------------------
+3004.4 = CORRECT
+----------------------------------------------------------------------------------------------------
 4. 
 Which of the two models (square feet or bedrooms) has lower RSS on TEST data?
 
-Model 1 (Square feet)
+[CORRECT] Model 1 (Square feet)
 
 Model 2 (Bedrooms)
+----------------------------------------------------------------------------------------------------
+did this by guesswork, need calculated method.
+
+----------------------------------------------------------------------------------------------------
