@@ -1,0 +1,64 @@
+
+
+https://www.coursera.org/learn/ml-regression/lecture/hFRqn/modeling-seasonality
+
+example of cyclic seasonal trend. 
+- period 12 months + offset phase shift. (ie: peaks in Jan or June?)
+
+
+
+
+https://www.coursera.org/learn/ml-regression/lecture/hO8AO/motivating-the-use-of-multiple-inputs
+Motivating the use of multiple inputs
+
+
+https://www.coursera.org/learn/ml-regression/lecture/QGZbl/defining-notation
+Defining notation
+
+inputs = vector x = (x[1], x[2], x[3], .....x[d])
+(NB: bold x = vector of inputs)
+
+output = y (scalar)
+
+h sub j(x) = jth feature (scalar)
+
+https://www.coursera.org/learn/ml-regression/lecture/5fzQC/regression-with-features-of-multiple-inputs
+Regression with features of multiple inputs
+
+Simple hyperplane
+slide 32
+
+
+brush up on matrix maths
+http://tutorial.math.lamar.edu/Classes/DE/LA_Matrix.aspx
+
+https://www.coursera.org/learn/ml-regression/lecture/1mwF2/interpreting-the-multiple-regression-fit
+Interpreting the multiple regression fit
+
+slide 35
+slide 36
+@ 5'00" - explains how increasing # of bedrooms can have -ive effect on house price.
+
+
+https://www.coursera.org/learn/ml-regression/lecture/YWLRQ/rewriting-the-single-observation-model-in-vector-notation
+
+Rewriting the single observation model in vector notation
+
+slide 41
+
+https://www.coursera.org/learn/ml-regression/lecture/IYnxj/computing-the-gradient-of-rss
+Computing the gradient of RSS
+@ 2'50" slide 52
+
+
+https://www.coursera.org/learn/ml-regression/lecture/zxirl/approach-1-closed-form-solution
+Approach 1: closed-form solution
+
+https://www.coursera.org/learn/ml-regression/lecture/0v3EJ/approach-2-gradient-descent
+Approach 2: gradient descent
+
+
+
+https://www.coursera.org/learn/ml-regression/lecture/SWpjC/algorithmic-summary-of-gradient-descent-approach
+Algorithmic summary of gradient descent approach
+
