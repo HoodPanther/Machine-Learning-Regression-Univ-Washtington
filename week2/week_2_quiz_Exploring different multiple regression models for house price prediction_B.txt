@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------------------
+notes
+https://www.coursera.org/learn/ml-regression/exam/KXEJ3/exploring-different-multiple-regression-models-for-house-price-prediction
+
+
+-------------------------------------------------------------------------------------------
+
+Implementing gradient descent for multiple regression
+
+5 questions
+-------------------------------------------------------------------------------------------
+first model is based on 'sqft_living'.
+second model is based on 'sqft_living', & 'sqft_living15' where sqft_living15 is the average squarefeet for the nearest 15 neighbors.
+-------------------------------------------------------------------------------------------
+1. 
+What is the value of the weight for sqft_living from your gradient descent predicting house prices (model 1)? Round your answer to 1 decimal place.
+
+Enter answer here
+-------------------------------------------------------------------------------------------
+281.9 [CORRECT]
+-------------------------------------------------------------------------------------------
+2. 
+What is the predicted price for the 1st house in the TEST data set for model 1 (round to nearest dollar)?
+
+Enter answer here
+-------------------------------------------------------------------------------------------
+356134 [CORRECT]
+-------------------------------------------------------------------------------------------
+3. 
+What is the predicted price for the 1st house in the TEST data set for model 2 (round to nearest dollar)?
+
+Enter answer here
+-------------------------------------------------------------------------------------------
+366651 [CORRECT]
+-------------------------------------------------------------------------------------------
+4. 
+Which estimate was closer to the true price for the 1st house on the TEST data set, model 1 or model 2?
+
+[ANSWER] Model 1 [CORRECT]
+
+Model 2
+-------------------------------------------------------------------------------------------
+see calcs in jupyter workbook.
+-------------------------------------------------------------------------------------------
+5. 
+Which model (1 or 2) has lowest RSS on all of the TEST data?
+
+Model 1
+
+[ANSWER] Model 2  [CORRECT]
+-------------------------------------------------------------------------------------------
+rss from model 1 = rss1 =  2.75400047593e+14
+rss from model 2 = rss2 =  2.70263446465e+14
+-------------------------------------------------------------------------------------------

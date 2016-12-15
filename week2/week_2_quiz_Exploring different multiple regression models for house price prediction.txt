@@ -2,7 +2,7 @@
 notes
 https://www.coursera.org/learn/ml-regression/exam/KXEJ3/exploring-different-multiple-regression-models-for-house-price-prediction
 
-
+These are the questions from first time I opened 
 -------------------------------------------------------------------------------------------
 
 Exploring different multiple regression models for house price prediction
