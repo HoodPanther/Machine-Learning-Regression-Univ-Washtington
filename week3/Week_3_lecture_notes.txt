@@ -1,0 +1,131 @@
+
+
+
+
+https://www.coursera.org/learn/ml-regression/lecture/VN4Qo/training-error-assessing-loss-on-the-training-set
+Training error: assessing loss on the training set
+
+calculate training error
+
+loss function
+
+training error vs model complexity
+
+https://www.coursera.org/learn/ml-regression/lecture/CDx5h/generalization-error-what-we-really-want
+Generalization error: what we really want
+
+generalization error vs model complexity.
+
+
+
+'Test error: what we can actually compute'
+https://www.coursera.org/learn/ml-regression/lecture/pq0SM/test-error-what-we-can-actually-compute
+refer quiz Q3
+NB: test error = 1/Ntest x sum(L(yi, Fw(Xi)))
+is fitted using training data. does not 'see' test data.
+Ntest = Number of test points.
+
+
+2'58" slide 12
+
+training error + generalization (true) error 
+slide 40 = v good example of training error vs generalization(true) error, w' and w^
+
+
+https://www.coursera.org/learn/ml-regression/lecture/u8c2x/defining-overfitting
+lecture : Defining overfitting
+
+overfitting!!!
+w' = w prime
+true error w^ > true error w'
+
+overfitted models generally have smaller training error
+
+too few points in training set - will get test error, bad approximation of generalization error.
+want just enough points in test set to approximate generalization error well
+if don't have enough methods for this - cross validation can be useful method.
+
+
+https://www.coursera.org/learn/ml-regression/lecture/qlMrZ/irreducible-error-and-bias
+Irreducible error and bias
+
+three sources of error
+- Noise
+- Bias
+- Variance
+
+refer slide 49
+
+Bias contribution
+if model flexible enough to capture fs(true)
+low complexity model has high bias
+
+
+variance contribution slide 52
+high complexity models have low bias
+
+
+Bias-variance tradeoff
+slide 59
+
+mean squared error
+
+HSE = bias^2 + variance
+
+nb: slide 59 note = 'cannot compute bias and variance (or generalization error)'
+
+
+https://www.coursera.org/learn/ml-regression/lecture/lYBeX/error-vs-amount-of-data
+Error vs. amount of data
+
+measures of error as function of # of data points in training set.
+fixed model complexity vs variable # data points in training set.
+
+refer slide 60
+
+
+https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff
+
+The bias is error from erroneous assumptions in the learning algorithm. High bias can cause an algorithm to miss the relevant relations between features and target outputs (underfitting).
+
+The variance is error from sensitivity to small fluctuations in the training set. High variance can cause overfitting: modeling the random noise in the training data, rather than the intended outputs.
+
+The bias–variance decomposition is a way of analyzing a learning algorithm's expected generalization error with respect to a particular problem as a sum of three terms, 
+1. bias
+2. variance
+3. irreducible error, resulting from noise in the problem itself.
+
+
+https://www.coursera.org/learn/ml-regression/lecture/lYBeX/error-vs-amount-of-data
+Error vs. amount of data
+
+tradeoff bias vs variance
+can't escape bias - will always be there.
+
+https://www.coursera.org/learn/ml-regression/lecture/PB7vp/formally-defining-the-3-sources-of-error
+Formally defining the 3 sources of error
+
+expected prediction error.
+
+slide 70
+sigma^2  (represents noise)
+noise also represented by epsilon
+noise is any input not specifically result of a feature input.
+have no control over noise, no model can predict the noise.
+noise = irreducible error
+
+bias^2 = 
+
+average estimated function = f sub w bar (x) = fit on a specific training data set averaged over all possible training data sets of size N that I might get.
+
+
+general notes
+training error will generally be less than test error.
+the polynomial chosen and parameters optimisd are selected to minimise training error.
+test error is a test of the polynomial and parameters.
+
+in n-fold cross validation, n disjoint sets of data are created. ie b1, b2, b3 ....bn
+bi is the test set and training set is all other sets.
+this is conducted for all sets i=1 to n. then average the error.
+
+
