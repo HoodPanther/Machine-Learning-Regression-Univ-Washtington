@@ -1,8 +1,8 @@
 Assessing Performance
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 https://www.coursera.org/learn/ml-regression/exam/vveUj/assessing-performance
 
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 13 questions
 1
 If the features of Model 1 are a strict subset of those in Model 2, the TRAINING error of the two models can never be the same.
@@ -10,9 +10,11 @@ If the features of Model 1 are a strict subset of those in Model 2, the TRAINING
 True
 
 [CORRECT] False
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 the features in model 2 not in model 1 could have zero influence or coefficients of value zero 
--------------------------------------------------------------------------------------------------------------------------------
+a strict subset is when the superset has elements not in the subset. ie set A <> set B.
+refer https://en.wikipedia.org/wiki/Subset
+-----------------------------------------------------------------------------------------------------------
 2. 
 If the features of Model 1 are a strict subset of those in Model 2, which model will USUALLY have lowest TRAINING error?
 
@@ -21,9 +23,9 @@ Model 1
 [CORRECT] Model 2
 
 It's impossible to tell with only this information
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : model 2
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 3. 
 If the features of Model 1 are a strict subset of those in Model 2. which model will USUALLY have lowest TEST error?
 
@@ -32,12 +34,12 @@ Model 1
 Model 2
 
 It's impossible to tell with only this information
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : impossible to tell.
 
 refer lecture 'Test error: what we can actually compute'
 https://www.coursera.org/learn/ml-regression/lecture/pq0SM/test-error-what-we-can-actually-compute
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 4. 
 If the features of Model 1 are a strict subset of those in Model 2, which model will USUALLY have lower BIAS?
 
@@ -46,12 +48,12 @@ Model 1
 [CORRECT] Model 2
 
 It's impossible to tell with only this information
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 refer lecture 'Irreducible error and bias'
 https://www.coursera.org/learn/ml-regression/lecture/qlMrZ/irreducible-error-and-bias
 
 attempt 1 : Model 2
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 5. 
 Which of the following plots of model complexity vs. RSS is most likely from TRAINING data (for a fixed data set)?
 
@@ -62,11 +64,11 @@ b
 [CORRECT] c
 
 d
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : C
 on TRAINING data, RSS asymptotically approaches zero with increasing model complexity. (overfitting)
 
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 6. 
 Which of the following plots of model complexity vs. RSS is most likely from TEST data (for a fixed data set)?
 
@@ -79,42 +81,43 @@ b
 c
 
 d
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 as model complexity increases from zero, RSS will decrease to minimun, then increase due to overfitting errors.
 attempt 1 : a
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 7. 
 It is always optimal to add more features to a regression model.
 
 True
 
 [CORRECT] False
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : FALSE
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 8. 
 A simple model with few parameters is most likely to suffer from:
 
 [CORRECT] High Bias
 
 High Variance
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 slide 57. high complexity = high variance.
 ie: high order polynomial will have more complex curve, thus higher variance.
 slide 58
 high complexity model = low bias.
 NBB: slide 59 the bias variance tradeoff.
 attempt 1 : high bias
--------------------------------------------------------------------------------------------------------------------------------
+more features = less bias but more variance on test model & risk of overfitting.
+-----------------------------------------------------------------------------------------------------------
 9. 
 A complex model with many parameters is most likely to suffer from:
 
 High Bias
 
 [CORRECT] High Variance
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : high  variance.
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 10. 
 A model with many parameters that fits training data very well but does poorly on test data is considered to be
 
@@ -125,9 +128,10 @@ biased
 [CORRECT] overfitted
 
 poorly estimated
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 attempt 1 : overfitted 
--------------------------------------------------------------------------------------------------------------------------------
+many parameters = lower bias, more variance.
+-----------------------------------------------------------------------------------------------------------
 11. 
 A common process for selecting a parameter like the optimal polynomial degree is:
 
@@ -135,22 +139,21 @@ Bootstrapping
 
 Model estimation
 
-Multiple regression
+[WRONG] : Multiple regression
 
-WRONG : Minimizing test error
+[WRONG] : Minimizing test error
 
-Minimizing validation error
--------------------------------------------------------------------------------------------------------------------------------
+[CORRECT] : Minimizing validation error
+-----------------------------------------------------------------------------------------------------------
 refer slide 82
 
 choose a polynomial degree to minimise the variance.
 or the polynomial degree at which no significent decrease in variance occurs as the degree is increased.
 
 attempt 1 : Minimizing test error WRONG
-Minimizing test error Minimizing validation error
-
-
--------------------------------------------------------------------------------------------------------------------------------
+attempt 2 : Multiple regression WRONG
+attempt 3 : Minimizing validation error CORRECT
+-----------------------------------------------------------------------------------------------------------
 12. 
 Selecting model complexity on test data (choose __all__ that apply):
 
@@ -161,7 +164,7 @@ TRUE : Provides an overly optimistic assessment of performance of the resulting 
 FALSE : Is computationally inefficient
 
 TRUE : Should never be done
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
 attempt 1 : WRONG
 TRUE : Allows you to avoid issues of overfitting to training data
@@ -175,7 +178,7 @@ TRUE : Provides an overly optimistic assessment of performance of the resulting 
 FALSE : Is computationally inefficient
 TRUE : Should never be done
 
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 13. 
 Which of the following statements is true (select all that apply): For a fixed model complexity, in the limit of an infinite amount of training data,
 
@@ -188,12 +191,21 @@ Variance goes to 0
 Training error goes to 0
 
 Generalization error goes to 0
--------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 refer lecture 'Error vs. amount of data'
 https://www.coursera.org/learn/ml-regression/lecture/lYBeX/error-vs-amount-of-data
 slide 60
-true error decreases as # of data points increases.
-training error increases as # of data points increases.
+The True Error approaches a limit as the number of training data points approaches infinity.
+This limit is the Bias + noise.
+Training error - starts with zero at zero data points, as number of data points increases the training error approaches the Bias + noise.
+
+https://www.coursera.org/learn/ml-regression/lecture/pq0SM/test-error-what-we-can-actually-compute
+Test error: what we can actually compute
+slide 40. @ 4'25"
+generalisation error - when plotted error (y axis) vs model complexity - starts high, reduces to a minimun, then error increases as model complexity increases.
+test error = almost identical to generalisation error, includes noise.
+test error can computer, generalisation error is what we really want.
+training error = starts high and approaches zero as model complexity increases.
 
 attempt 1 :  WRONG
 TRUE : The noise goes to 0
@@ -204,10 +216,18 @@ TRUE : Generalization error goes to 0
 
 attempt 2 :  
 TRUE : The noise goes to 0
-TRUE : Bias goes to 0
+FALSE : Bias goes to 0
 FALSE : Variance goes to 0   
 [nb: more data points will result in higher RSS in proportion to n squared but divided by n.]
 FALSE : Training error goes to 0
 FALSE : Generalization error goes to 0
 
--------------------------------------------------------------------------------------------------------------------------------
+attempt 3 :  
+FALSE : The noise goes to 0
+FALSE : Bias goes to 0
+FALSE : Variance goes to 0   
+[nb: more data points will result in higher RSS in proportion to n squared but divided by n.]
+FALSE : Training error goes to 0
+TRUE : Generalization error goes to 0
+
+-----------------------------------------------------------------------------------------------------------

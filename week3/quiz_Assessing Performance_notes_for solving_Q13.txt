@@ -1,0 +1,7 @@
+Overfitting occurs when a model is excessively complex, such as having too many parameters relative to the number of observations. A model that has been overfit has poor predictive performance, as it overreacts to minor fluctuations in the training data.
+[https://en.wikipedia.org/wiki/Overfitting]
+
+
+The coefficient of determination, denoted R2 or r2 and pronounced "R squared", is a number that indicates the proportion of the variance in the dependent variable that is predictable from the independent variable.
+[https://en.wikipedia.org/wiki/Coefficient_of_determination]
+
