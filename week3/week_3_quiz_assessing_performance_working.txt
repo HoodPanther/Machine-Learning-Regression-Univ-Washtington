@@ -153,6 +153,9 @@ or the polynomial degree at which no significent decrease in variance occurs as 
 attempt 1 : Minimizing test error WRONG
 attempt 2 : Multiple regression WRONG
 attempt 3 : Minimizing validation error CORRECT
+
+refer slide 86
+
 -----------------------------------------------------------------------------------------------------------
 12. 
 Selecting model complexity on test data (choose __all__ that apply):
@@ -199,6 +202,11 @@ The True Error approaches a limit as the number of training data points approach
 This limit is the Bias + noise.
 Training error - starts with zero at zero data points, as number of data points increases the training error approaches the Bias + noise.
 
+Bias does not approach zero with more data.
+Training error does not approach zero with more data. Training error approaches bias + noise.
+
+
+
 https://www.coursera.org/learn/ml-regression/lecture/pq0SM/test-error-what-we-can-actually-compute
 Test error: what we can actually compute
 slide 40. @ 4'25"
@@ -214,7 +222,7 @@ Variance goes to 0
 Training error goes to 0
 TRUE : Generalization error goes to 0
 
-attempt 2 :  
+attempt 2 :  WRONG
 TRUE : The noise goes to 0
 FALSE : Bias goes to 0
 FALSE : Variance goes to 0   
@@ -222,7 +230,7 @@ FALSE : Variance goes to 0
 FALSE : Training error goes to 0
 FALSE : Generalization error goes to 0
 
-attempt 3 :  
+attempt 3 :  WRONG
 FALSE : The noise goes to 0
 FALSE : Bias goes to 0
 FALSE : Variance goes to 0   
@@ -230,4 +238,18 @@ FALSE : Variance goes to 0
 FALSE : Training error goes to 0
 TRUE : Generalization error goes to 0
 
+attempt 4 :  WRONG
+FALSE : The noise goes to 0
+TRUE : Bias goes to 0
+FALSE : Variance goes to 0   
+[nb: more data points will result in higher RSS in proportion to n squared but divided by n.]
+FALSE : Training error goes to 0
+TRUE : Generalization error goes to 0
+
+attempt 5 : WRONG
+FALSE : The noise goes to 0
+FALSE : Bias goes to 0
+FALSE : Variance goes to 0
+FALSE : Training error goes to 0
+TRUE  : Generalization error goes to 0
 -----------------------------------------------------------------------------------------------------------

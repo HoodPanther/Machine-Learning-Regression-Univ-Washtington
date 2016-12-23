@@ -1,3 +1,76 @@
+https://www.coursera.org/learn/ml-regression/lecture/EC0kO/assessing-performance-intro
+intro 32 seconds
+
+https://www.coursera.org/learn/ml-regression/lecture/cGUQ3/what-do-we-mean-by-loss
+What do we mean by "loss"?
+
+model + algorythm = fitted function
+
+
+Assumed symmetric loss function : cost of over prediction is same as cost of under prediction.
+
+fit polynomial to minimise RSS on training data.
+
+define loss function L(y, f(sub w^)(X) )
+refer slide 11
+
+small training error is not going to give good predictions
+unless: training data includes every event that might occur.
+
+
+Generalization error: formula @ 3'08", slide 26.
+Graphing error (yaxis) vs model complexity.
+Error decreases to a minimum (from model complexity=0 to complexity=XX), 
+then error increases to infinity.
+
+Slide 37
+
+Test error = average loss  on houses in test set.
+
+
+https://www.coursera.org/learn/ml-regression/lecture/u8c2x/defining-overfitting
+Defining overfitting
+start @ slide 40
+
+overfitting definition
+- training error of W1 < training error of W2
+- True error of W1 > true error of W2.
+
+https://www.coursera.org/learn/ml-regression/lecture/qn2vj/training-test-split
+Training/test split
+
+
+https://www.coursera.org/learn/ml-regression/lecture/qlMrZ/irreducible-error-and-bias
+Irreducible error and bias
+
+sources of error
+noise
+bias 
+error
+
+slide 48
+irreducible error : variance of noise. we have no control over noise.
+
+BIAS : how well model fits the true relationship between features and result.
+
+
+low complexity  model = low variance.
+high complexity model = high variance.
+slide 57
+Lecture 'Variance and the bias-variance tradeoff' @ 2'31
+
+high complexity models have low bias.
+slide 59: as model complexity increases, bias decreases.
+          as model complexity increases, bias increases.
+
+
+mean squared error  = bias^2 + variance
+
+machine learning is all about bias vs variance. need to find sweet spot between these two.
+CANNOT compute Bias & variance.
+
+https://www.coursera.org/learn/ml-regression/lecture/lYBeX/error-vs-amount-of-data
+Error vs. amount of data
 
 
 
@@ -101,6 +174,7 @@ Error vs. amount of data
 
 tradeoff bias vs variance
 can't escape bias - will always be there.
+refer slides 
 
 https://www.coursera.org/learn/ml-regression/lecture/PB7vp/formally-defining-the-3-sources-of-error
 Formally defining the 3 sources of error
@@ -128,4 +202,19 @@ in n-fold cross validation, n disjoint sets of data are created. ie b1, b2, b3 .
 bi is the test set and training set is all other sets.
 this is conducted for all sets i=1 to n. then average the error.
 
+
+Formally defining the 3 sources of error
+https://www.coursera.org/learn/ml-regression/lecture/PB7vp/formally-defining-the-3-sources-of-error
+slide 61
+
+@ 4'13" - slide 78
+
+
+https://www.coursera.org/learn/ml-regression/lecture/HNJ0c/training-validation-test-split-for-model-selection-fitting-and-assessment
+Training/validation/test split for model selection, fitting, and assessment
+
+
+slide 82
+
+1. model selection - choose tuning parameters - lambda - control model complexity.
 

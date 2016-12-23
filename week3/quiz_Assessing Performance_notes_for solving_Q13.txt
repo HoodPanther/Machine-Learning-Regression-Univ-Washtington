@@ -5,3 +5,26 @@ Overfitting occurs when a model is excessively complex, such as having too many 
 The coefficient of determination, denoted R2 or r2 and pronounced "R squared", is a number that indicates the proportion of the variance in the dependent variable that is predictable from the independent variable.
 [https://en.wikipedia.org/wiki/Coefficient_of_determination]
 
+
+The variance is error from sensitivity to small fluctuations in the training set. High variance can cause overfitting: modeling the random noise in the training data, rather than the intended outputs.
+[https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff]
+
+The bias–variance decomposition is a way of analyzing a learning algorithm's expected generalization error with respect to a particular problem as a sum of three terms, the bias, variance, and a quantity called the irreducible error, resulting from noise in the problem itself.
+[https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff]
+
+
+
+https://www.coursera.org/learn/ml-regression/lecture/lYBeX/error-vs-amount-of-data
+Error vs. amount of data
+
+
+The True Error approaches a limit as the number of training data points approaches infinity.
+This limit is the Bias + noise.
+
+Training error - starts with zero at zero data points, as number of data points increases the training error approaches the Bias + noise.
+
+
+
+In supervised learning applications in machine learning and statistical learning theory, generalization error (also known as the out-of-sample error) is a measure of how accurately an algorithm is able to predict outcome values for previously unseen data.
+[https://en.wikipedia.org/wiki/Generalization_error]
+

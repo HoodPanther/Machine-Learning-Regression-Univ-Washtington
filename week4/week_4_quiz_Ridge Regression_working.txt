@@ -1,0 +1,241 @@
+------------------------------------------------------------------------------------------------
+Ridge Regression
+
+9 questions
+1. 
+
+Which of the following is NOT a valid measure of overfitting?
+
+[CORRECT] Sum of parameters (w1+w2+...+wn)
+
+Sum of squares of parameters (w12+w22+…+wn2)
+
+[WRONG] Range of parameters, i.e., difference between maximum and minimum parameters
+
+Sum of absolute values of parameters (|w1|+|w2|+…+|wn|)
+------------------------------------------------------------------------------------------------
+measures of overfitting - refer slide 15 & 17
+total cost = measure of fit + measure of magnitude of coedfficients.
+           = RSS(w) + ||w||^2 sub 2 (???)
+
+
+notes
+FALSE : Sum of parameters (w1+w2+...+wn)
+TRUE : Sum of squares of parameters (w12+w22+…+wn2)
+FALSE : Range of parameters, i.e., difference between maximum and minimum parameters
+FALSE : Sum of absolute values of parameters (|w1|+|w2|+…+|wn|)
+
+generally expect all parameters to be 'small'
+
+attempt 1  [WRONG]
+Range of parameters, i.e., difference between maximum and minimum parameters
+
+attempt 2
+Sum of parameters (w1+w2+...+wn)
+------------------------------------------------------------------------------------------------
+2. 
+
+In ridge regression, choosing a __large__ penalty strength λ tends to lead to a model with (choose all that apply):
+
+[CORRECT] High bias
+Low bias
+High variance
+[CORRECT] Low variance
+------------------------------------------------------------------------------------------------
+refer lecture 'The resulting ridge objective and its extreme solutions' @ 2'08"
+https://www.coursera.org/learn/ml-regression/lecture/xYzTA/the-resulting-ridge-objective-and-its-extreme-solutions
+Lecture 'How ridge regression balances bias and variance'
+https://www.coursera.org/learn/ml-regression/lecture/697eG/how-ridge-regression-balances-bias-and-variance
+slide 20 
+
+lambda controls model complexity.
+large lambda = high bias, low variance. 
+small lambda = low bias, high variance.
+
+attempt 1  [WRONG]
+FALSE : High bias
+TRUE  : Low bias
+FALSE : High variance
+TRUE  : Low variance
+
+attempt 2
+TRUE  : High bias
+FALSE : Low bias
+FALSE : High variance
+TRUE  : Low variance
+
+
+------------------------------------------------------------------------------------------------
+3. 
+
+Which of the following plots best characterize the trend of bias, variance, and generalization error (all plotted over λ)?
+
+------------------------------------------------------------------------------------------------
+lambdacontrols model complexity.
+large lambda = high bias, low variance. 
+small lambda = low bias, high variance.
+generalization error - assume this dip to a minimun then increases?
+
+attempt 1 : c  [CORRECT]
+
+------------------------------------------------------------------------------------------------
+4. 
+
+In ridge regression using unnormalized features, if you double the value of a given feature (i.e., a specific column of the feature matrix), what happens to the estimated coefficients for every other feature? They:
+
+Double
+
+Half
+
+Stay the same
+
+[CORRECT] Impossible to tell from the information provided
+------------------------------------------------------------------------------------------------
+attempt 1 : Stay the same  [WRONG]
+ridge regression - features are normalised first. unnormalised features are impossible to predict.
+attempt 2 : Impossible to tell from the information provided
+------------------------------------------------------------------------------------------------
+5. 
+
+If we only have a small number of observations, K-fold cross validation provides a better estimate of the generalization error than the validation set method.
+
+[CORRECT] True
+
+False
+------------------------------------------------------------------------------------------------
+attempt 1 : true  [CORRECT]
+
+------------------------------------------------------------------------------------------------
+6. 
+
+10-fold cross validation is more computationally intensive than leave-one-out (LOO) cross validation.
+
+True
+
+[CORRECT] False
+------------------------------------------------------------------------------------------------
+refer slide 59.
+http://scikit-learn.org/stable/modules/cross_validation.html
+
+'As a general rule, most authors, and empirical evidence, suggest that 5- or 10- fold cross validation should be preferred to LOO.'
+
+lecture 'K-fold cross validation' @ 4'27" slide 59
+https://www.coursera.org/learn/ml-regression/lecture/FJcUw/k-fold-cross-validation
+
+attempt 1 : answer = FALSE [CORRECT]
+
+------------------------------------------------------------------------------------------------
+7. 
+
+Assume you have a training dataset consisting of N observations and D features. 
+
+You use the closed-form solution to fit a multiple linear regression model using ridge regression. 
+
+To choose the penalty strength λ, you run _leave-one-out_ (LOO) cross validation searching over L values of λ. 
+
+Let Cost(N,D) be the computational cost of running ridge regression with N data points and D features. 
+
+Assume the prediction cost is negligible compared to the computational cost of training the model. Which of the following represents the computational cost of your LOO cross validation procedure?
+
+[WRONG] LN . Cost(N,D)
+
+LN . Cost(N−1,D)
+
+LD . Cost(N−1,D)
+
+[WRONG] LD . Cost(N,D)
+
+L  . Cost(N−1,D)
+
+[WRONG] L  . Cost(N,D)
+------------------------------------------------------------------------------------------------
+notes
+Cost(N,D) = cost of running ridge regression with N data points and D features.
+LOO repeats over L values of λ. 
+attempt 1 : cost of LOO = L . Cost(N,D)  WRONG
+attempt 2 : LN . Cost(N,D) [WRONG]
+
+attempt 3
+left with 
+LN . Cost(N−1,D)
+LD . Cost(N−1,D)
+LD . Cost(N,D)
+L  . Cost(N−1,D)
+the Cost(N−1,D) options cannot be correct since we are told cost of ridge regression is Cost(N,D)
+
+so it must be LD . Cost(N,D)
+
+NB D = number of features.
+
+attempt 4 : LN . Cost(N−1,D)
+
+Not sure why this is correct.
+Why is it LN.Cost(N-1, D) instead of LN.Cost(N, D) ???
+
+
+
+------------------------------------------------------------------------------------------------
+8. 
+
+Assume you have a training dataset consisting of 1 million observations. Suppose running the closed-form solution to fit a multiple linear regression model using ridge regression on this data takes 1 second. Suppose you want to choose the penalty strength λ by searching over 100 possible values. How long will it take to run leave-one-out (LOO) cross-validation for this selection task?
+
+About 3 hours
+
+[WRONG] : About 3 days
+
+[CORRECT] : About 3 years
+
+About 3 decades
+------------------------------------------------------------------------------------------------
+1 million observations
+
+3 hours =  10,800 seconds
+1 day   =  24 hrs = 86,400 seconds
+1 week  = 604,800 seconds
+1 Year = 365 days = 31,536,000
+3 years = 3 x 31,536,000 = 94,608,000 ~ 100,000,000
+
+
+logic: leave one out requires model be run for each observation.
+need to run again for each value of lambda.
+
+so big O = 1M x 100 = 100,000,000.
+
+attempt 2 : 3 years
+
+------------------------------------------------------------------------------------------------
+9. 
+
+Assume you have a training dataset consisting of 1 million observations. Suppose running the closed-form solution to fit a multiple linear regression model using ridge regression on this data takes 1 second. 
+
+Suppose you want to choose the penalty strength λ by searching over 100 possible values. 
+
+If you only want to spend about 1 hour to select λ, 
+what value of k should you use for k-fold cross-validation?
+
+k=6
+
+[CORRECT]k=36
+
+[WRONG] k=600
+
+k=3600
+------------------------------------------------------------------------------------------------
+1hr = 3600 seconds
+
+attempt 1 k =600 WRONG
+
+attempt 2 : 36 [CORRECT]
+
+notes:
+the question is 'If you only want to spend about 1 hour to select λ'
+3600/100  = seconds per hour / possible lamba values = 36
+
+
+what is the big O of 'closed-form solution to fit a multiple linear regression model using ridge regression' and big O of 'k-fold cross-validation'
+
+
+closed-form solution to fit a multiple linear regression model using ridge regression on this data takes 1 second
+
+1 hour = 3600 seconds
+------------------------------------------------------------------------------------------------

@@ -1,0 +1,44 @@
+https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
+
+
+matrix multiplicaton
+input  : 2 of nxn matrices
+output : one nxn matrix
+
+O(n^3)
+
+matrix multiplicaton
+input  : one n x m matrix & one m x p matrix.
+output : one n x p matrix
+
+O(n.m.p)
+
+matrix inversioin
+
+input  : one n x n matrix.
+output : one m x n matrix.
+
+O(mn^2)    [for m<= n]
+
+
+------------------------------------
+
+N training examples (rows) & C features (columns)
+X = C columns x N rows.
+
+
+Xt x X   [X transform x X]
+
+Xt = N x C
+X  = C x N
+
+O(N.C^2)
+
+nb: we expect N to be much larger than C.
+
+
+
+refer
+http://math.stackexchange.com/questions/84495/computational-complexity-of-least-square-regression-operation
+
+
