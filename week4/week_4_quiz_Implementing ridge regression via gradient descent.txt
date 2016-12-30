@@ -1,0 +1,188 @@
+Implementing ridge regression via gradient descent
+
+8 questions
+------------------------------------------------------------------------------------------
+1. 
+We run ridge regression to learn the weights of a simple model that has a single feature (sqft_living), once with l2_penalty=0.0 and once with l2_penalty=1e11.
+
+What is the value of the coefficient for sqft_living that you learned with no regularization, rounded to 1 decimal place? Use American-style decimals (e.g. 30.5)
+
+Enter answer here
+------------------------------------------------------------------------------------------
+NB : no regularization, l2_penalty =  0.0 : simple_weights_0_penalty  
+calc results = Learned weights =  [  7.88199720e-02   2.63024271e+02]
+answer Q1 : 2.63024271e+02 = 263.02 rounded to 263.0 [CORRECT]
+
+------------------------------------------------------------------------------------------
+2. 
+This question refers to the same model as the previous question.
+
+What is the value of the coefficient for sqft_living that you learned with high regularization (l2_penalty=1e11)? Use American-style decimals (e.g. 30.5) and round your answer to 1 decimal place.
+
+Enter answer here
+------------------------------------------------------------------------------------------
+attempt 2 : [   0.99807924  124.57384473]
+124.57384473 rounded to 124.6  [CORRECT]
+------------------------------------------------------------------------------------------
+3. 
+This question refers to the same model as the previous question.
+
+Comparing the lines you fit with the with no regularization versus high regularization (l2_penalty=1e11), which one is steeper?
+
+Line fit with no regularization (l2_penalty=0)
+
+Line fit with high regularization (l2_penalty=1e11)
+------------------------------------------------------------------------------------------
+l2_penalty=1e11 gave 124.57384473
+l2_penalty=0.0  gave 2.63024271e+02 = 263.02
+so the slope from l2_penalty is larger
+answer = 'Line fit with no regularization (l2_penalty=0)' [WRONG!!! 
+
+[refer graph blue graph 'simple_weights_0_penalty' (l2_penalty=0.0) is obviously steeper]
+
+refer notebook section 'Visualizing effect of L2 penalty'
+------------------------------------------------------------------------------------------
+4. 
+This question refers to the same model as the previous question.
+
+Using all zero weights, make predictions for the TEST data. In which of the following ranges does the TEST error (RSS) fall?
+
+Between 8e13 and 2e14
+
+Between 2e14 and 5e14
+
+Between 5e14 and 8e14
+
+Between 8e14 and 1e15
+
+Between 1e15 and 3e15
+------------------------------------------------------------------------------------------
+calculated answer in workbook is 1.78427328252e+15
+answer = Between 1e15 and 3e15  [CORRECT]
+------------------------------------------------------------------------------------------
+
+NB: on second attempt, different question posed.
+4. 
+This question refers to the same model as the previous question.
+
+Using the weights learned with high regularization (l2_penalty=1e11), make predictions for the TEST data. In which of the following ranges does the TEST error (RSS) fall?
+
+Between 8e13 and 2e14
+
+Between 2e14 and 5e14
+
+Between 5e14 and 8e14
+
+Between 8e14 and 1e15
+
+Between 1e15 and 3e15
+------------------------------------------------------------------------------------------
+calculated answer = 6.94653089852e+14
+answer = Between 5e14 and 8e14 [CORRECT]
+------------------------------------------------------------------------------------------
+
+NB: on third attempt, different question posed.
+
+Q4 This question refers to the same model as the previous question.
+
+Using the weights learned with no regularization (l2_penalty=0), make predictions for the TEST data. In which of the following ranges does the TEST error (RSS) fall?
+
+Between 8e13 and 2e14
+
+Between 2e14 and 5e14
+
+Between 5e14 and 8e14
+
+Between 8e14 and 1e15
+
+Between 1e15 and 3e15
+------------------------------------------------------------------------------------------
+no regularization (l2_penalty=0)
+2.75723643935e+14
+answer = Between 2e14 and 5e14
+
+------------------------------------------------------------------------------------------
+5. 
+We run ridge regression to learn the weights of a model that has two features (sqft_living, sqft_living15), once with l2_penalty=0.0 and once with l2_penalty=1e11.
+
+What is the value of the coefficient for sqft_living that you learned with no regularization, rounded to 1 decimal place? Use American-style decimals (e.g. 30.5).
+
+Enter answer here
+------------------------------------------------------------------------------------------
+refer section 'Running a multiple regression with L2 penalty'
+'Let us now consider a model with 2 features: ['sqft_living', 'sqft_living15']'
+
+multiple_weights_0_penalty =  [  -0.35780713  243.0557255    22.41312582]
+answer = 243.1  [CORRECT]
+
+------------------------------------------------------------------------------------------
+6. 
+This question refers to the same model as the previous question.
+
+What is the value of the coefficient for sqft_living that you learned with high regularization (l2_penalty=1e11)? Use American-style decimals (e.g. 30.5) and round your answer to 1 decimal place.
+
+Enter answer here
+------------------------------------------------------------------------------------------
+multiple_weights_high_penalty =  [  6.74968593  91.48927271  78.43658678]
+answer = 91.5  [CORRECT]
+------------------------------------------------------------------------------------------
+7. 
+This question refers to the same model as the previous question.
+
+Using the weights learned with no regularization (l2_penalty=0), make predictions for the TEST data. In which of the following ranges does the TEST error (RSS) fall?
+
+Between 8e13 and 2e14
+
+Between 2e14 and 4e14
+
+Between 4e14 and 8e14
+
+Between 8e14 and 1e15
+
+Between 1e15 and 3e15
+------------------------------------------------------------------------------------------
+NB: ___no regularization___
+multiple_test_predictions = predict_output(test_feature_matrix, initial_weights)
+multiple_test_errors = multiple_test_predictions - test_output
+RSS_multi_initial_weights = sum(multiple_test_errors * multiple_test_errors)
+print RSS_multi_initial_weights
+RSS = 1.78427328252e+15
+
+answer = Between 1e15 and 3e15  [CORRECT]
+------------------------------------------------------------------------------------------
+
+
+NB: Q7 has more than one question asked. 
+
+This question refers to the same model as the previous question.
+
+Using the weights learned with high regularization (l2_penalty=1e11), make predictions for the TEST data. In which of the following ranges does the TEST error (RSS) fall?
+
+Between 8e13 and 2e14
+
+Between 2e14 and 4e14
+
+Between 4e14 and 8e14
+
+Between 8e14 and 1e15
+
+Between 1e15 and 3e15
+------------------------------------------------------------------------------------------
+NB : ___high regularization___
+RSS calc'd = 5.0040480058e+14
+answer = Between 4e14 and 8e14
+
+------------------------------------------------------------------------------------------
+8. 
+This question refers to the same model as the previous question.
+
+Predict the price of the first house in the test set using the weights learned with no regularization. Do the same using the weights learned with high regularization. Which weights make better prediction for the first house in the test set?
+
+The weights learned with no regularization (l2_penalty=0)
+
+The weights learned with high regularization (l2_penalty=1e11)
+------------------------------------------------------------------------------------------
+Which weights make better prediction for the first house in the test set?
+smaller error is better. high regularization model has smaller error.
+answer = The weights learned with high regularization (l2_penalty=1e11) [CORRECT]
+------------------------------------------------------------------------------------------

@@ -1,0 +1,46 @@
+The workbook available for download in December 2016 provides the code for splitting the data as below.
+
+n = len(train_valid_shuffled) 
+k = 10 # 10-fold cross-validation 
+for i in xrange(k): 
+    start = (n*i)/k 
+    end = (n*(i+1))/k-1 
+    print i, (start, end)
+
+I changed the last line to show the number of items in each split.
+print i, (start, end), end-start
+
+This yields these splits 
+0 (0, 1938) 1938 
+1 (1939, 3878) 1939 
+2 (3879, 5817) 1938 
+3 (5818, 7757) 1939 
+4 (7758, 9697) 1939 
+5 (9698, 11636) 1938 
+6 (11637, 13576) 1939 
+7 (13577, 15515) 1938 
+8 (15516, 17455) 1939 
+9 (17456, 19395) 1939
+
+some of these sets are split to 1938 records, others split to 1939 records.
+
+n = len(train_valid_shuffled) = 19396 
+
+in python 
+    n/10 = 1939 
+    n*1.0/10 = 1939.6 
+hence the need for sets to be split into inconsistent sizes.
+
+Given the code provided dictates the size of the sets, I'm a little disappointed no clear direction is given on how students should interpret the question.
+
+using train_valid_shuffled[5818:7758] = 536,234 
+using train_valid_shuffled[5818:7757] = 536,353
+
+
+code below demonstrates results from the options above.
+
+This 'feels' like poor teaching standards as the example code given and the question definition clashes. kludging a fix to bridge the gap is not good practice. 
+
+
+
+print int(round(validation4['price'].mean(), 0)) temp = train_valid_shuffled[5818:7758] print "using train_valid_shuffled[5818:7758] = ", int(round(temp['price'].mean(), 0)), " 'correct' answer" temp = train_valid_shuffled[5818:7757] print "using train_valid_shuffled[5818:7757] = ", int(round(temp['price'].mean(), 0)) #code below for explaining forum questions test1 = train_valid_shuffled[n/k*3:n/k*4] print "n/k*3 = ", n/k*3, ", n/k*4 = ", n/k*4 print "n*1.0/k*3 = ", n*1.0/k*3, ", n*1.0/k*4 = ", n*1.0/k*4 print "int(n*1.0/k*3) = ", int(n*1.0/k*3), ", int(n*1.0/k*4) = ", int(n*1.0/k*4) print "int(n*1.0/k*3) = ", int(n*1.0/k*3), ", int(n*1.0/k*4)-1 = ", int(n*1.0/k*4)-1 print "using train_valid_shuffled[n/k*3:n/k*4] = ", int(round(test1['price'].mean(), 0)) 
