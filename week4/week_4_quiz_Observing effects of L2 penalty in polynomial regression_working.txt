@@ -90,7 +90,7 @@ What is the best value for the L2 penalty according to 10-fold validation?
 
 10^3.5 = 3162.277660168
 ------------------------------------------------------------------------------------------------
-calculated value = 10,000 ??? [CORRECT]
+calculated value = 10,000, submitted 1,000 [CORRECT] ???
 ------------------------------------------------------------------------------------------------
 7. 
 Using the best L2 penalty found above, train a model using all training data. Which of the following ranges contains the RSS on the TEST data of the model you learn with this L2 penalty?

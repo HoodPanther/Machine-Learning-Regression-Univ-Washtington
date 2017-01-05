@@ -1,0 +1,136 @@
+Using LASSO to select features
+
+6 questions
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+1. 
+We learn weights on the entire house dataset, using an L1 penalty of 1e10 (or 5e2, if using scikit-learn). Some features are transformations of inputs; see the reading.
+
+Which of the following features have been chosen by LASSO, i.e. which features were assigned nonzero weights? (Choose all that apply)
+
+yr_renovated   [NO] 
+
+waterfront     [NO] 
+
+sqft_living    [YES]
+
+grade          [YES] 
+
+floors         [NO] 
+-------------------------------------------------------------------------------
+as calculated by python.
+
+non zero coefficients, names and values
+(intercept)  =  274873.05595
+bathrooms  =  8468.53108691
+sqft_living  =  24.4207209824
+sqft_living_sqrt  =  350.060553386
+grade  =  842.068034898
+sqft_above  =  20.0247224171
+
+zero value coefficients
+bedrooms
+bedrooms_square
+sqft_lot
+sqft_lot_sqrt
+floors
+floors_square
+waterfront
+view
+condition
+sqft_basement
+yr_built
+yr_renovated
+-------------------------------------------------------------------------------
+2. 
+We split the house sales dataset into training set, test set, and validation set and choose the l1_penalty that minimizes the error on the validation set.
+
+In which of the following ranges does the best l1_penalty fall?
+
+Between 0 and 100
+
+Between 100 and 1000
+
+Between 1000 and 10000
+
+Between 10000 and 100000
+
+Greater than 100000
+-------------------------------------------------------------------------------
+best l1_penalty = 10
+answer = Between 0 and 100 [correct]
+
+-------------------------------------------------------------------------------
+3. 
+Using the best value of l1_penalty as mentioned in the previous question, how many nonzero weights do you have?
+
+Enter answer here
+-------------------------------------------------------------------------------
+18 [correct]
+refer python notebook - all model.coefficient values are output.
+-------------------------------------------------------------------------------
+4. 
+We explore a wide range of l1_penalty values to find a narrow region of l1_penaty values where models are likely to have the desired number of non-zero weights (max_nonzeros=7).
+
+What value did you find for l1_penalty_min?
+
+If you are using GraphLab Create, enter your answer in simple decimals without commas (e.g. 1131000000), rounded to nearest millions.
+
+If you are using scikit-learn, enter your answer in simple decimals without commas (e.g. 4313), rounded to nearest integer.
+
+Enter answer here
+-------------------------------------------------------------------------------
+l1_penalty_min =  2976351441.63  rounded to 2976000000 [correct]
+l1_penalty_max =  3792690190.73
+-------------------------------------------------------------------------------
+5. 
+We then explore the narrow range of l1_penalty values between l1_penalty_min and l1_penalty_max.
+
+What value of l1_penalty in our narrow range has the lowest RSS on the VALIDATION set and has sparsity equal to max_nonzeros?
+
+If you are using GraphLab Create, enter your answer in simple decimals without commas (e.g. 1131000000), rounded to nearest millions.
+
+If you are using scikit-learn, enter your answer in simple decimals without commas (e.g. 4342), rounded to nearest integer.
+
+Enter answer here
+-------------------------------------------------------------------------------
+l1_penalty_values[min_rss_indice_Max_nonzeros] =  3448968612.16 rounded to 3448000000  [correct]
+-------------------------------------------------------------------------------
+6. 
+Consider the model learned with the l1_penalty found in the previous question. Which of the following features has non-zero coefficients? (Choose all that apply)
+
+sqft_living  [non zero]
+
+bedrooms_square [zero]
+
+sqft_lot_sqrt [zero]
+
+bathrooms [non zero]
+
+floors [zero]
+
+[correct]
+-------------------------------------------------------------------------------
+non zero value coefficients
+(intercept)           = 222253.192544
+bedrooms              = 661.722717782
+bathrooms             = 15873.9572593
+sqft_living           = 32.4102214513
+sqft_living_sqrt      = 690.114773313
+grade                 = 2899.42026975
+sqft_above            = 30.0115753022
+
+zero value coefficients
+bedrooms_square
+sqft_lot
+sqft_lot_sqrt
+floors
+floors_square
+waterfront
+view
+condition
+sqft_basement
+yr_built
+yr_renovated
+-------------------------------------------------------------------------------
