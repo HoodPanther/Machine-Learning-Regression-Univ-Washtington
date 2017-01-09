@@ -1,0 +1,145 @@
+https://www.coursera.org/learn/ml-regression/exam/unsZb/nearest-neighbors-kernel-regression
+
+Nearest Neighbors & Kernel Regression
+
+7 questions
+------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+1. 
+Which of the following datasets is best suited to nearest neighbor or kernel regression? Choose all that apply.
+
+A dataset with many features
+
+A dataset with two features whose observations are evenly scattered throughout the input space
+
+A dataset with many observations
+
+A dataset with only a few observations
+------------------------------------------------------------------------------------------------------------
+submitted
+[false] A dataset with many features
+[true]  A dataset with two features whose observations are evenly scattered throughout the input space
+[true]  A dataset with many observations
+[false] A dataset with only a few observations
+[CORRECT]
+
+refer lecture 'Issues with high-dimensions, data scarcity, and computational complexity' @ start.
+NN & kernel methods work well when the data cover the space - but more dimensions you have, need more points 
+required to cover the space. need N=O(exp(d)) data points for good performance.
+
+------------------------------------------------------------------------------------------------------------
+2. 
+Which of the following is the most significant advantage of k-nearest neighbor regression (for k>1) over 1-nearest neighbor regression?
+
+Removes discontinuities in the fit
+
+Better handles boundaries and regions with few observations
+
+Better copes with noise in the data
+------------------------------------------------------------------------------------------------------------
+Better copes with noise in the data  [CORRECT]
+
+------------------------------------------------------------------------------------------------------------
+3. 
+To obtain a fit with low variance using kernel regression, we should choose the kernel to have:
+
+Small bandwidth λ
+
+Large bandwidth λ
+------------------------------------------------------------------------------------------------------------
+Large bandwidth λ  [CORRECT]
+------------------------------------------------------------------------------------------------------------
+4. 
+In k-nearest neighbor regression and kernel regression, the complexity of functions that can be represented grows as we get more data.
+
+True
+
+False
+------------------------------------------------------------------------------------------------------------
+TRue  [CORRECT]
+------------------------------------------------------------------------------------------------------------
+5. 
+Parametric regression and 1-nearest neighbor regression will converge to the same solution as we collect more and more noiseless observations.
+
+True
+
+False
+------------------------------------------------------------------------------------------------------------
+False [CORRECT]
+------------------------------------------------------------------------------------------------------------
+6. 
+Suppose you are creating a website to help shoppers pick houses. Every time a user of your website visits the webpage for a specific house, you want to compute a prediction of the house value. You are using 1-NN to make the prediction and have 100,000 houses in the dataset, with each house having 100 features. Computing the distance between two houses using all the features takes about 10 microseconds. Assuming the cost of all other operations involved (e.g., fetching data, etc.) is negligible, about how long will it take to make a prediction using the brute-force method described in the videos?
+
+10 milliseconds
+
+100 milliseconds
+
+1 second
+
+10 seconds
+------------------------------------------------------------------------------------------------------------
+refer slide 55
+
+Computing the distance between two houses using all the features takes about 10 microseconds.
+O(1-NN) = O(100,000)
+comparing 2 houses costs 10 microseconds
+comparing N houses costs 10 x N microseconds = 10 x 100,000 x 0.000001 seconds = 1,000,000 X 0.000001 = 1.0 seconds
+
+Answer = 1 second  [CORRECT]
+------------------------------------------------------------------------------------------------------------
+7. 
+For the housing website described in the previous question, you learn that you need predictions within 50 milliseconds. To accomplish this, you decide to reduce the number of features in your nearest neighbor comparisons. How many features can you use?
+
+1 feature
+
+5 features
+
+10 features
+
+20 features
+
+50 features
+------------------------------------------------------------------------------------------------------------
+wording of question is confusing. in Q6 we are told we are using 1-NN. for 1-NN O(N) ie: k is not a factor.
+
+we know for k-NN O( N log(k) )
+
+working backwards, we want to achieve O(N log(k) ) in 50 milliseconds.
+100,000 x log(k) x const < 50 milliseconds where 1 x log(100) x const = 10 microseconds = 10 x 0.000001
+
+100,000 log(k) x const < 50 x 0.001
+log(k) x const < 50 x 0.001 / 100,000 = 0.05 / 100,000 = 0.000 000 5
+
+1 x log(100) x const = 10 x 0.000001 = 0.00001
+
+log(k)   x const  < 0.000 000 5
+log(100) x const  = 0.000 01
+
+
+const = 0.000 01 / log(100)
+
+log(k) < 0.000 000 5 / const
+
+log(k) < 0.000 000 5 / (0.000 01 / log(100) )
+
+log(k) < log(100) X 0.000 000 5 / 0.000 01 = log(100) X 0.05
+
+log(k) < log(100) X 0.05
+
+log(100) = 4.615
+log(100) X 0.05 = 0.23076
+
+k < exp(log(100) X 0.05)
+k < exp(0.23076) 
+k < 1.26
+
+answer 1 feature [WRONG]
+
+reworking required to prove solution
+
+
+correct answer = 5 features.
+
+------------------------------------------------------------------------------------------------------------
+100% graded on 9th Jan 2017
